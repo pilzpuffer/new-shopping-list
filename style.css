@@ -1,0 +1,66 @@
+li {
+    opacity: 1;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease;
+  }
+
+li button {
+    font-size: 12px;
+    margin-left: 20px;
+    color: #666;
+  }
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.fade-out {
+    opacity: 0;
+  }
+
+.warning {
+    opacity: 1;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 15px;
+    color: red;
+    width: fit-content;
+    background-color: pink;
+    user-select: none;
+}
+
+.no-click {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.5;
+}
+
+.red {
+    color: rgb(172, 18, 18);
+}
+
+.orange {
+    color: rgb(243, 136, 13);
+}
+
+.yellow {
+    color: rgb(255, 222, 33);
+}
+
+.green {
+    color: rgb(10, 129, 10);
+}
+
+.light-blue {
+    color:rgb(2, 164, 218)
+}
+
+.blue {
+    color: rgb(22, 22, 197);
+}
+
+.purple {
+    color: rgb(165, 8, 165);
+}
