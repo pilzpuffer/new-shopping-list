@@ -5,6 +5,11 @@ const main = document.querySelector("div");
 const colorArray = ["red", "orange", "yellow", "green", "light-blue", "blue", "purple"]; //colors added as classes - specified in the css file. needs to be a list of 7 colors to work properly (if title text will remain unchanged)
 
 addButton.addEventListener("click", createItem);
+entryInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        createItem();
+    }
+});
 
 
 function createItem () {
