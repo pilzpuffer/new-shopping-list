@@ -86,8 +86,7 @@ function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
     const dividedTitle = baseTitle.split(" ");
     const firstWord = document.createElement("span");
     firstWord.textContent = dividedTitle[0];
-    title.appendChild(firstWord);
-    title.appendChild(document.createTextNode(" ")); //adds spaces between the words in the title
+    title.append(firstWord, document.createTextNode(" ")); //adds spaces between the words in the title
     
     const rainbowArray = rainbowWord.split("");
     rainbowArray.forEach((letter, index) => {
