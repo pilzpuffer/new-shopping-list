@@ -82,12 +82,12 @@ function updateListItemColors () {
 function disableEntry () {
     addButton.classList.add("no-click");
     entryInput.classList.add("no-click");
-    
+
 }
 
 function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
     const title = document.querySelector("h1");
-    title.innerHTML = '';
+    title.textContent = "";
     
     const dividedTitle = baseTitle.split(" ");
     const firstWord = document.createElement("span");
