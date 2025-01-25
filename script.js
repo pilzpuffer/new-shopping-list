@@ -2,13 +2,13 @@ const shoppingList = document.querySelector("ul");
 const addButton = document.querySelector("button");
 const entryInput = document.querySelector("input");
 const main = document.querySelector("div");
-const colorArray = ["red", "orange", "yellow", "green", "light-blue", "blue", "purple"];
+const colorArray = ["red", "orange", "yellow", "green", "light-blue", "blue", "purple"]; //colors added as classes - specified in the css file. needs to be a list of 7 colors to work properly (if title text will remain unchanged)
 
 addButton.addEventListener("click", createItem);
 
 
 function createItem () {
-        if (!entryInput.value.trim()) {
+        if (!entryInput.value.trim()) { //removes whitespace from entries
             disableEntry();
             const warning = document.createElement("div");
             warning.setAttribute("class", "warning");
@@ -17,7 +17,7 @@ function createItem () {
     
             setTimeout(() => {
                 warning.remove();
-                addButton.classList.remove("no-click");
+                addButton.classList.remove("no-click"); //disables entry/input interaction while the warning is present
                 entryInput.classList.remove("no-click")
             }, 2000);
             
@@ -38,7 +38,7 @@ function createItem () {
                 listItem.classList.add("fade-out");
                 setTimeout(() => {
                     listItem.remove();
-                    updateListItemColors();
+                    updateListItemColors(); //will update colors of items in the list, keeping the correct color order
                 }, 200);
     
             });
@@ -52,7 +52,7 @@ function createItem () {
 
     if (count === 7) {
         disableEntry();
-        updateTitleWithRainbow("My shopping list", "RAINBOW", colorArray);
+        updateTitleWithRainbow("My shopping list", "RAINBOW", colorArray); //base title is meant to be 3 words long for the rest of the function to work as intended
 
         const rainbow = document.createElement("img");
         rainbow.src = "/rainbow.webp";
@@ -69,7 +69,7 @@ function updateListItemColors () {
     const listItems = Array.from(document.querySelectorAll("li"));
 
     listItems.forEach((item, index) => {
-        item.classList.remove(...colorArray);
+        item.classList.remove(...colorArray); //removes all (if any) color classes (that are present in the specified array) that were already applied
         item.classList.add(colorArray[index]);
     });
 }
@@ -87,7 +87,7 @@ function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
     const firstWord = document.createElement("span");
     firstWord.textContent = dividedTitle[0];
     title.appendChild(firstWord);
-    title.appendChild(document.createTextNode(" "));
+    title.appendChild(document.createTextNode(" ")); //adds spaces between our words
     
     const rainbowArray = rainbowWord.split("");
     rainbowArray.forEach((letter, index) => {
