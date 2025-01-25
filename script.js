@@ -70,7 +70,7 @@ function updateListItemColors () {
 
     listItems.forEach((item, index) => {
         item.classList.remove(...colorArray); //removes all (if any) color classes (that are present in the specified array) that were already applied
-        item.classList.add(colorArray[index]);
+        item.classList.add(colorArray[index]); //assigns a color based on the index of the item
     });
 }
 
@@ -87,7 +87,7 @@ function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
     const firstWord = document.createElement("span");
     firstWord.textContent = dividedTitle[0];
     title.appendChild(firstWord);
-    title.appendChild(document.createTextNode(" ")); //adds spaces between our words
+    title.appendChild(document.createTextNode(" ")); //adds spaces between the words in the title
     
     const rainbowArray = rainbowWord.split("");
     rainbowArray.forEach((letter, index) => {
@@ -97,13 +97,11 @@ function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
         title.appendChild(letterSpan);
     });
     
-    title.appendChild(document.createTextNode(" "));
     const secondWord = document.createElement("span");
     secondWord.textContent = dividedTitle[1];
-    title.appendChild(secondWord);
     
-    title.appendChild(document.createTextNode(" "));
     const thirdWord = document.createElement("span");
     thirdWord.textContent = dividedTitle[2];
-    title.appendChild(thirdWord);
+
+    title.append(document.createTextNode(" "), secondWord, document.createTextNode(" "), thirdWord); //adds in the rest of the title
 }
