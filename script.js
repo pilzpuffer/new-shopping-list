@@ -82,6 +82,7 @@ function updateListItemColors () {
 function disableEntry () {
     addButton.classList.add("no-click");
     entryInput.classList.add("no-click");
+    
 }
 
 function updateTitleWithRainbow(baseTitle, rainbowWord, colorArray) {
